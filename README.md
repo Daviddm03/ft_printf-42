@@ -1,20 +1,85 @@
-# ft_printf-42 📟
-<h3>What is ft_printf ⁉️</h3>
-The ft_printf project is a key assignment at 42 school, aimed at teaching students about variadic functions and string formatting by having them create a custom version of the C standard library's printf function.
+# ft_printf
 
-<h3>Key Points 🔑</h3>
+A custom implementation of the C `printf` function, developed as part of the 42 curriculum.
 
-**Makefile**
-- Automates the compilation process for the ft_printf library.
+The project focuses on variadic functions and formatted output while recreating some of the most commonly used `printf` conversions.
 
-**Variadic Functions**
-- Uses variadic functions to handle an indefinite number of arguments.
+## Supported Conversions
 
-**Format Specifiers**
-- Implements various format specifiers like %d, %s, %x, and %p for formatting different data types.
+The implementation handles:
 
-**Buffer Management**
-- Ensures efficient output handling by minimizing write operations.
+| Conversion | Output |
+| --- | --- |
+| `%c` | Character |
+| `%s` | String |
+| `%p` | Pointer address |
+| `%d` / `%i` | Signed decimal integer |
+| `%u` | Unsigned decimal integer |
+| `%x` | Lowercase hexadecimal |
+| `%X` | Uppercase hexadecimal |
+| `%%` | Percent sign |
 
-<h3>Conclusion 🙏</h3>
-The ft_printf project helps students gain a deeper understanding of C programming, particularly in handling variadic arguments and formatted output. This project builds a strong foundation for future programming challenges, emphasizing the development of efficient and maintainable code.
+## Getting Started
+
+### Requirements
+
+- GCC or Clang
+- Make
+- A Unix-like environment
+
+Clone and compile:
+
+```bash
+git clone git@github.com:Daviddm03/ft_printf-42.git
+cd ft_printf-42
+make
+```
+
+The Makefile generates:
+
+```text
+libftprintf.a
+```
+
+Other commands:
+
+```bash
+make clean
+make fclean
+make re
+```
+
+## Usage
+
+Include the header:
+
+```c
+#include "ft_printf.h"
+```
+
+Example:
+
+```c
+int main(void)
+{
+    ft_printf("Hello %s! Number: %d\n", "world", 42);
+    return (0);
+}
+```
+
+Compile it with the library:
+
+```bash
+cc main.c libftprintf.a -o test
+./test
+```
+
+## What I Learned
+
+This project introduced me to variadic functions and gave me a better understanding of how formatted output can be parsed and handled internally.
+
+It also required working with different data types and converting values to decimal, hexadecimal, and pointer representations.
+
+## Tech
+
+C · Variadic Functions · Makefile · Static Libraries
